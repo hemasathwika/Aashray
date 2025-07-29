@@ -1,0 +1,41 @@
+/* src/pages/Donations.css */
+
+/* Reset basic styles for height */
+
+/* Wrapper for content to ensure it fills the screen and avoids navbar overlap */
+.donations-container {
+  min-height: 100vh;
+  padding-top: 70px; /* leave space for fixed navbar if needed */
+  background-color: #f5f7fa;
+}
+
+/* Form styling */
+form input, form button {
+  font-size: 16px;
+}
+
+/* List styling */
+.list-group-item {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Donations.css */
+
+.full-width {
+  width: 1000%;
+  max-width: 1000%;
+  margin: 0;
+}
+
+/* Optional: make the form and list responsive and centered with spacing */
+form {
+  max-width: 4000px;
+  margin: auto;
+}
+
+.list-group {
+  max-width: 600px;
+  margin: auto;
+}
+
