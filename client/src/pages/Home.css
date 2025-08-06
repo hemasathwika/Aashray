@@ -1,16 +1,28 @@
+/* Home.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Ensures full screen layout */
 .home-container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
+/* Makes carousel take up full screen */
+.carousel-item,
 .carousel-img {
-  width: 100vw;
   height: 100vh;
   object-fit: cover;
 }
 
+/* Overlay centered over the carousel */
 .home-overlay {
   position: absolute;
   top: 50%;
@@ -19,13 +31,15 @@
   color: white;
   text-align: center;
   z-index: 10;
+  padding: 1rem;
 }
 
-.home-overlay h1 {
+.overlay-content h1 {
   font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.home-overlay p {
+.overlay-content p {
   font-size: 1.5rem;
 }

@@ -1,3 +1,5 @@
+
+
 // src/pages/Donations.jsx
 import React, { useState, useEffect } from 'react';
 import { donateFood, getDonations } from '../api';
@@ -42,42 +44,34 @@ function Donations() {
   }, []);
 
   return (
-    <div className="donations-page">
-      <div className="form-section">
-        <h2 className="mb-4 text-center">🍱 Donate Food</h2>
+    <div className="donations-container">
+      <div className="donations-grid">
+        <div className="form-section card">
+          <h2>🍱 Donate Food</h2>
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="donorName" placeholder="Donor Name" value={formData.donorName} onChange={handleChange} required />
+            <input type="text" name="contactInfo" placeholder="Contact Info" value={formData.contactInfo} onChange={handleChange} required />
+            <input type="text" name="foodType" placeholder="Food Type" value={formData.foodType} onChange={handleChange} required />
+            <input type="text" name="quantity" placeholder="Quantity" value={formData.quantity} onChange={handleChange} required />
+            <input type="text" name="location" placeholder="Location" value={formData.location} onChange={handleChange} required />
+            <button type="submit">Donate</button>
+          </form>
+        </div>
 
-        <form onSubmit={handleSubmit} className="mb-4">
-          <div className="mb-3">
-            <input className="form-control" type="text" name="donorName" placeholder="Donor Name" value={formData.donorName} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <input className="form-control" type="text" name="contactInfo" placeholder="Contact Info" value={formData.contactInfo} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <input className="form-control" type="text" name="foodType" placeholder="Food Type" value={formData.foodType} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <input className="form-control" type="text" name="quantity" placeholder="Quantity" value={formData.quantity} onChange={handleChange} />
-          </div>
-          <div className="mb-3">
-            <input className="form-control" type="text" name="location" placeholder="Location" value={formData.location} onChange={handleChange} />
-          </div>
-          <button type="submit" className="btn btn-primary w-100">Donate</button>
-        </form>
-      </div>
-
-      <div className="list-section">
-        <h3 className="mb-3 text-center">📋 Donations List</h3>
-        <ul className="list-group">
-          {donations.map((item, i) => (
-            <li key={i} className="list-group-item">
-              <strong>{item.donorName}</strong> donated <strong>{item.quantity}</strong> of <strong>{item.foodType}</strong> at <em>{item.location}</em>
-            </li>
-          ))}
-        </ul>
+        <div className="list-section card">
+          <h3>📋 Donations List</h3>
+          <ul className="donation-list">
+            {donations.map((item, i) => (
+              <li key={i} className="donation-item">
+                <strong>{item.donorName}</strong> donated <strong>{item.quantity}</strong> of <strong>{item.foodType}</strong> at <em>{item.location}</em>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Donations;
+
