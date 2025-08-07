@@ -1,0 +1,31 @@
+.full-width-navbar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 70px; /* Ensures height is accounted for */
+}
+
+.navbar {
+  background-color: #343a40 !important;
+  height: 70px; /* Same height here to match */
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffc107 !important;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107 !important;
+}

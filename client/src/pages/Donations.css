@@ -1,95 +1,232 @@
-/* src/pages/Donations.css */
-
-.donations-container {
-  min-height: 100vh;
-  background-color: #f5f7fa;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Center vertically */
-  padding: 100px 300px 40px; /* Leave space for navbar + spacing */
-  box-sizing: border-box;
-}
-
-.donations-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  width: 100%;
-  max-width: 1100px;
-  align-items: start;
-}
-
-.card {
-  background: white;
+/* Wrapper for full donation page */
+.donation-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+  color: #333;
 }
 
-.form-section h2,
-.list-section h3 {
+/* Hero Section */
+.donation-hero {
+  background: linear-gradient(to right, #ffe259, #ffa751);
+  padding: 40px 30px;
   text-align: center;
-  margin-bottom: 20px;
-  color: #003366;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-form {
+.donation-hero h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.donation-hero p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Motivation Section */
+.donation-motivation {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: slideInUp 0.8s ease;
 }
 
-form input {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  transition: border 0.3s ease;
+.motivation-card {
+  flex: 1;
 }
 
-form input:focus {
-  border-color: #003366;
+.motivation-card h2 {
+  color: #e67e22;
+  margin-bottom: 15px;
+}
+
+.motivation-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.motivation-card ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.motivation-card ul li::before {
+  content: "✅";
+  position: absolute;
+  left: -20px;
+}
+
+.motivation-image {
+  flex: 1;
+  text-align: center;
+}
+
+.motivation-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Floating Form Card Styling */
+.donation-card {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 35px 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(to bottom right, #ffffff, #f1fdfb);
+  border: 1px solid #b2dfdb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.donation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+}
+
+.donation-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #00796b;
+}
+
+/* Input Styling */
+.donation-form .form-group {
+  margin-bottom: 20px;
+}
+
+.donation-form label {
+  font-weight: 600;
+  color: #00796b;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.donation-form input,
+.donation-form textarea {
+  width: 90%;
+  padding: 12px 15px;
+  border: 1px solid #b2dfdb;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, background-color 0.3s;
+  font-size: 1rem;
+}
+
+.donation-form input:focus,
+.donation-form textarea:focus {
+  border-color: #26a69a;
+  background-color: #ffffff;
   outline: none;
 }
 
-form button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: #003366;
-  color: white;
+/* Buttons */
+.btn-submit,
+.btn-view {
+  padding: 12px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  width: 90%;
+  display: block;
+  margin-top: 10px;
 }
 
-form button:hover {
-  background-color: #002244;
+.btn-submit {
+  background-color: #27ae60;
+  color: white;
 }
 
-.donation-list {
-  list-style-type: none;
-  padding-left: 0;
+.btn-submit:hover {
+  background-color: #219150;
+} 
+
+.btn-view {
+  background-color: #2980b9;
+  color: white;
 }
 
-.donation-item {
-  background-color: #eef3f9;
-  padding: 12px 16px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  border-left: 4px solid #003366;
-  font-size: 15px;
+.btn-view:hover {
+  background-color: #1f6391;
 }
 
-/* Mobile Responsive */
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .donations-container {
-    padding: 100px 15px 30px;
-    align-items: flex-start;
+  .donation-motivation {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .donations-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .donation-hero h1 {
+    font-size: 2rem;
+  }
+
+  .donation-card {
+    margin: 40px 10px;
+    padding: 30px 20px;
+  }
+
+  .btn-submit,
+  .btn-view {
+    font-size: 0.95rem;
   }
 }
+
+

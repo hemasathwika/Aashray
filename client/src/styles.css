@@ -1,58 +1,29 @@
-/* styles.css */
+.page-wrapper {
+  min-height: calc(100vh - 56px); /* assuming navbar height is 56px */
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
 
-body, html {
+body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  background-color: #f5f6fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Full-width Navbar */
-.navbar-container {
-  width: 100%;
-  background-color: #003366; /* Dark blue shade */
-  color: white;
-  padding: 0.8rem 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+* {
+  box-sizing: inherit;
 }
-
-/* Inner content (logo + links) in a flex row */
-.navbar-content {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5rem;
-}
-
-/* Logo styling */
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* Navigation links styling */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+.page-wrapper {
+  min-height: 100vh;
+  padding-top: 80px; /* height of fixed navbar */
+  padding-left: 0;
+  padding-right: 0;
   margin: 0;
-  padding: 0;
 }
-
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #ffcc00; /* Highlight on hover */
+.main-content-wrapper {
+  padding-top: 80px; /* Adjust to your navbar height */
+  padding-left: 16px;
+  padding-right: 16px;
+  min-height: 100vh;
 }

@@ -1,6 +1,6 @@
-// client/src/pages/Beggars.jsx
-import React, { useState, useEffect } from 'react';
-import { addBeggar, getBeggars } from '../api';
+import React, { useState } from 'react';
+import { addBeggar } from '../api';
+import { Link } from 'react-router-dom';
 
 function Beggars() {
   const [formData, setFormData] = useState({
@@ -10,8 +10,6 @@ function Beggars() {
     identification: '',
     needs: '',
   });
-
-  const [beggars, setBeggars] = useState([]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,17 +25,7 @@ function Beggars() {
       identification: '',
       needs: '',
     });
-    fetchBeggars();
   };
-
-  const fetchBeggars = async () => {
-    const res = await getBeggars();
-    setBeggars(res.data);
-  };
-
-  useEffect(() => {
-    fetchBeggars();
-  }, []);
 
   return (
     <div className="container py-5">
@@ -67,14 +55,10 @@ function Beggars() {
         <button type="submit" className="btn btn-success w-100">Add Beggar</button>
       </form>
 
-      <h3 className="mb-3">📋 Beggar List</h3>
-      <ul className="list-group">
-        {beggars.map((b, index) => (
-          <li key={index} className="list-group-item">
-            <strong>{b.name}</strong> — {b.age} years, {b.gender} | ID: {b.identification || 'N/A'} | Needs: {b.needs}
-          </li>
-        ))}
-      </ul>
+      {/* Link to Beggar List Page */}
+      <div className="text-center">
+        <Link to="/beggar-list" className="btn btn-outline-primary">View Beggar List</Link>
+      </div>
     </div>
   );
 }

@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.page-container {
+  padding-top: 80px;  /* Makes room for fixed navbar */
+  min-height: 100vh;  /* Ensures full screen pages */
+  box-sizing: border-box;
+}
